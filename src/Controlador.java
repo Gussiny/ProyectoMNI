@@ -15,8 +15,7 @@ public class Controlador {
             this.vista.addCalcularListener(new ActionListener() {
                 @SuppressWarnings("unused")
 				public void actionPerformed(ActionEvent e) {
-                	System.out.println("si jaja");
-                	/*
+                	
                     Double a = Double.parseDouble(vista.textA.getText());
                     Double b = Double.parseDouble(vista.textB.getText());
                     Double tol = Double.parseDouble(vista.textTol.getText());
@@ -43,7 +42,7 @@ public class Controlador {
                     else{
                         vista.result.setText("Indefinido");
                     }
-                    */
+                    
                 }
                  
                 public void MuestraError(String string){

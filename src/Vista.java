@@ -72,7 +72,6 @@ public class Vista extends JFrame{
 
 public void addCalcularListener(ActionListener actionListener) {
 	this.bCalcular.addActionListener(actionListener);
-	
 }
 
 }
