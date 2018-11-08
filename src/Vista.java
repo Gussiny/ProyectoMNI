@@ -1,6 +1,7 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class Vista extends JFrame{
 
@@ -41,7 +42,7 @@ public class Vista extends JFrame{
      textA.setPreferredSize(new Dimension(100,25));
      textB.setPreferredSize(new Dimension(100,25));
      textTol.setPreferredSize(new Dimension(100,25));
-     result.setText("Se necesita que 'x' sea de tamaÃ±o: ");
+     result.setText("Se necesita que 'x' sea de tamaño: ");
      error.setText("No hay error");
 
 
@@ -68,5 +69,10 @@ public class Vista extends JFrame{
      this.add(panelControl,BorderLayout.EAST);
      this.setVisible(true);
    }
+
+public void addCalcularListener(ActionListener actionListener) {
+	this.bCalcular.addActionListener(actionListener);
+	
+}
 
 }
