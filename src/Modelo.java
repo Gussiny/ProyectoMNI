@@ -5,13 +5,13 @@ public class Modelo {
         boolean x1b = true;
         boolean x2b = true;
         boolean esMaximo = true;
-        Double xsqrt = 3*a*a+6*a*b+3*b*b-64*a*b;
+        Double xsqrt = 16*a*a+32*a*b+16*b*b-48*a*b;
 
         if(xsqrt<tol){
             throw new InvalidParameterException();
         }
-        Double x1 = (3*a+3*b+Math.sqrt(xsqrt))/16;
-        Double x2 = (3*a+3*b-Math.sqrt(xsqrt))/16;
+        Double x1 = (4*a+4*b+Math.sqrt(xsqrt))/24;
+        Double x2 = (4*a+4*b-Math.sqrt(xsqrt))/24;
 
         if(2*x1>=b || 2*x1>=a){
             x1b = false;

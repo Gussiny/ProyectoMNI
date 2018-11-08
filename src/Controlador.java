@@ -37,7 +37,7 @@ public class Controlador {
                         this.MuestraError("No hay valores mÃ¡xmimos para los valores de a y b dados");
                     }
                     else if(x!=null){
-                        vista.result.setText(String.valueOf(x));
+                        vista.result.setText("Se necesita que 'x' sea de tamaño: " + String.valueOf(Math.round(x*10000.0)/10000.0));
                     }
                     else{
                         vista.result.setText("Indefinido");
