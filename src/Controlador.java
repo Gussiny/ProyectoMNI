@@ -33,7 +33,7 @@ public class Controlador {
                             this.MuestraError("No hay valores criticos reales");
                         }
                         if(x==null){
-                            this.MuestraError("No hay valores mÃ¡xmimos para los valores de a y b dados");
+                            this.MuestraError("No hay valores máximos para los valores de a y b dados");
                         }
                         else if(x!=null){
                             vista.result.setText("Se necesita que 'x' sea de tamaño: " + String.valueOf(Math.round(x*10000.0)/10000.0));
@@ -43,7 +43,7 @@ public class Controlador {
                         }
                 	}
                 	catch(NumberFormatException exc) {
-                		this.MuestraError("Por favor no deje ninguna casilla vacía");
+                		this.MuestraError("Por favor ingrese el formato correcto");
                 	}                    
                 }                 
                 public void MuestraError(String string){
