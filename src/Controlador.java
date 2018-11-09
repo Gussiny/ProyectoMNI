@@ -2,6 +2,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.security.InvalidParameterException;
 
+import javax.swing.JOptionPane;
+
 public class Controlador {
    
 	
@@ -47,7 +49,8 @@ public class Controlador {
                 	}                    
                 }                 
                 public void MuestraError(String string){
-                    vista.error.setText(string);
+                	JOptionPane.showMessageDialog(null, string);
+                    //vista.error.setText(string);
                 }           
             });
         }
