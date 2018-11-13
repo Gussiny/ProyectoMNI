@@ -9,23 +9,26 @@ public class Controlador {
 	
         private Vista vista;
         private Modelo modelo;
-        
-        public Controlador(Vista v, Modelo m) {
+        private PanelDibujo pd;
+        public Double a= 0.,b=0.;
+        public Controlador(Vista v, Modelo m, PanelDibujo pd2) {
             
             this.vista = v;
             this.modelo = m;
+            this.pd = pd2;
             this.vista.addCalcularListener(new ActionListener() {
                 @SuppressWarnings("unused")
 				public void actionPerformed(ActionEvent e) {
                 	try {
-                		Double a = Double.parseDouble(vista.textA.getText());
-                        Double b = Double.parseDouble(vista.textB.getText());
-                        Double tol = Double.parseDouble(vista.textTol.getText()); 
+                		a = Double.parseDouble(vista.textA.getText());
+                        b = Double.parseDouble(vista.textB.getText());
+                        Double tol = Double.parseDouble(vista.textTol.getText());
+                        
                         if(a<tol){
-                            this.MuestraError("Valores de a es menor a la tolerancia");
+                            this.MuestraError("Valor de 'a' es MENOR a la TOLERANCIA");
                         }
                         if(b <tol){
-                            this.MuestraError("Valores de b es menor a la tolerancia");
+                            this.MuestraError("Valor de 'b' es MENOR a la TOLERANCIA");
                         }
                         Double x = 0.0;
                         try{
@@ -38,7 +41,10 @@ public class Controlador {
                             this.MuestraError("No hay valores máximos para los valores de a y b dados");
                         }
                         else if(x!=null){
-                            vista.result.setText("Se necesita que 'x' sea de tamaño: " + String.valueOf(Math.round(x*10000.0)/10000.0));
+                        	String xS =  String.valueOf(Math.round(x*10000.0)/10000.0);
+                            vista.result.setText("X = " + xS + pd.valorMedida);
+                            pd.redibujarPanelDibujo(a, b, xS);
+                           
                         }
                         else{
                             vista.result.setText("Indefinido");
