@@ -33,8 +33,8 @@ public class Modelo {
         }
 
         if(x1b){
-            Double cercanoA = x1 + 1;
-            Double cercanoB = x1 - 1;
+            Double cercanoA = x1 + 0.001;
+            Double cercanoB = x1 - 0.001;
             Double yA = cercanoA*(b-2*cercanoA)*(a-2*cercanoA);
             Double yB = cercanoB*(b-2*cercanoB)*(a-2*cercanoB);
 
@@ -43,8 +43,8 @@ public class Modelo {
             }
         }
         else{
-            Double cercanoA = x2 + 1;
-            Double cercanoB = x2 - 1;
+            Double cercanoA = x2 + 0.001;
+            Double cercanoB = x2 - 0.001;
             Double yA = cercanoA*(b-2*cercanoA)*(a-2*cercanoA);
             Double yB = cercanoB*(b-2*cercanoB)*(a-2*cercanoB);
 
