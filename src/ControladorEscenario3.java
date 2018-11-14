@@ -26,6 +26,8 @@ public class ControladorEscenario3 {
                         pd.redibujarPanelDibujo(profundidad,radio,lado);
                       } catch(InvalidParameterException ex){
                         this.MuestraError("No es un valor valido para el volumen");
+                      }catch(NumberFormatException e2) {
+                    	  this.MuestraError("Por Favor Ingresa El Formato Correcto");
                       }
                     }
 

@@ -71,7 +71,7 @@ public class VistaEscenario1 extends JPanel{
 
 		panelTol.add(labelTol);
 		panelTol.add(textTol);
-		textTol.setText("0.001");
+		textTol.setText("0.0001");
 
 		panelX.add(resultX);
 		panelY.add(resultY);
