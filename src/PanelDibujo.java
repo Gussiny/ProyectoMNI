@@ -21,7 +21,7 @@ public class PanelDibujo extends JPanel implements ActionListener{
 		this.valorX = "0.0";
 		this.valorMedida = " m";
 		//this.refresh.addActionListener(this);
-		
+
 	}
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -30,23 +30,23 @@ public class PanelDibujo extends JPanel implements ActionListener{
 		g.drawRect(50, 100, 400, 200);	//	EXTERIOR DE LA CAJA
 		g.drawRect(100, 150, 300, 100);	//	INTERIOR DE LA CAJA
 		g.setColor(Color.BLACK);
-		
+
 		g.fillRect(50, 100, 50, 50);	//	ESQUINA SUPERIOR IZQUIERDA
 		g.fillRect(50, 250, 50, 50);	//	ESQUINA SUPERIOR DERECHA
 		g.fillRect(400, 100, 50, 50);	//	ESQUINA INFERIOR IZQUIERDA
 		g.fillRect(400, 250, 50, 50);	//	ESQUINA INFERIOR DERECHA
-		
+
 		g.drawLine(50, 330, 450, 330);	//	LINEA DE MEDIDA DE a
 		g.drawLine(480, 300, 480, 100);	//	LINEA DE MEDIDA DE b
 		g.drawLine(400, 90, 450, 90);	//	LINEA DE MEDIDA DE x
-		
+
 		g.drawString("a = " + this.valorA + this.valorMedida, 230, 350);	//	VALOR DE a
 		g.drawString("b = " + this.valorB + this.valorMedida, 500, 200);	//	VALOR DE b
 		g.drawString("x = " + this.valorX + this.valorMedida, 400, 80);		//	VALOR DE x
 		this.repaint();
 	}
-	
-	
+
+
 	public void redibujarPanelDibujo(Double a, Double b, String xS) {
 		this.valorA = a.toString();
 		this.valorB = b.toString();
@@ -67,6 +67,6 @@ public class PanelDibujo extends JPanel implements ActionListener{
 			//System.out.println("hola");
 			this.repaint();
 		}
-		
+
 	}
 }
