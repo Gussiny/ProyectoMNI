@@ -57,7 +57,7 @@ public class VistaEscenario3 extends JPanel{
 		resultX.setFont(new Font("Arial",Font.BOLD, 26));
 		resultX.setText("X = ");
 
-		panelUnidades.add(new JLabel("Unidad de medición: "));
+		panelUnidades.add(new JLabel("Unidad de medida: "));
 		panelUnidades.add(unidadesMedicion);
 
 		panelR.add(labelR);

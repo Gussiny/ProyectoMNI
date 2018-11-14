@@ -24,7 +24,7 @@ public class PanelDibujoEscenario3 extends JPanel{
 		super.paintComponent(g);
 
 		g.drawRect(230,170,270,180); // Cara frontal
-		g.drawLine(280,110,550,110); // Linea hasta arriba
+		g.drawLine(280,110,550,110); // Horizontal hasta arriba
 		g.drawLine(230,170,280,110); // Diagonal izq
 		g.drawLine(500,170,550,110); // Diagonal centro
 		g.drawLine(500,350,550,290); // Diagonal der
@@ -40,9 +40,12 @@ public class PanelDibujoEscenario3 extends JPanel{
 		g.drawString("x = " + this.valorX + this.valorMedida,330,250);
 
 		g.setColor(Color.LIGHT_GRAY);
-		g.drawLine(315,140,315,290); // Vertical izq de hoyo
-		g.drawLine(465,140,465,290); // Vertical der de hoyo
-		g.drawOval(315,275,150,30); // Ovalo inferior
+		g.drawLine(315,140,315,320); // Vertical izq de hoyo
+		g.drawLine(465,140,465,320); // Vertical der de hoyo
+		g.drawLine(280,290,550,290); // Horizontal interior
+		g.drawLine(230,350,280,290); // Diagonal interior
+		g.drawLine(280,110,280,290); // Vertical interior
+		g.drawOval(315,305,150,30); // Ovalo inferior
 		this.repaint();
 	}
 

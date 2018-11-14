@@ -30,7 +30,7 @@ public class Vista extends JPanel{
 	public JLabel panelMedidaB = new JLabel(" m");
 	public JComboBox<String> unidadesMedicion = new JComboBox<String>();
 
-	
+
 	private PanelDibujo pd;
 
 	public Vista(PanelDibujo pd2){
@@ -40,7 +40,7 @@ public class Vista extends JPanel{
 		//this.setLocationRelativeTo(null);
 		this.setLayout(new BorderLayout(1,1));
 		//this.setResizable(false);
-		
+
 		//JPanel panelDibujo = new JPanel();
 		//ImageIcon image = new ImageIcon("Box-Image.png");
 		//JLabel labelDibujo = new JLabel(image);
@@ -66,7 +66,7 @@ public class Vista extends JPanel{
 		result.setText("X = ");
 		//error.setText("No hay error");
 
-		panelUnidades.add(new JLabel("Unidad de medición: "));
+		panelUnidades.add(new JLabel("Unidad de medida: "));
 		panelUnidades.add(unidadesMedicion);
 
 		panelA.add(labelA);

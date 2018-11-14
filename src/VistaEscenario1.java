@@ -62,7 +62,7 @@ public class VistaEscenario1 extends JPanel{
 		resultZ.setText("Z = ");
 		//error.setText("No hay error");
 
-		panelUnidades.add(new JLabel("Unidad de medición: "));
+		panelUnidades.add(new JLabel("Unidad de medida: "));
 		panelUnidades.add(unidadesMedicion);
 
 		panelV.add(labelV);
