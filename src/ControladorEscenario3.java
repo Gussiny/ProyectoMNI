@@ -1,4 +1,4 @@
-import java.awt.event.ActionEvent;
+import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener;
 import java.security.InvalidParameterException;
 
@@ -22,8 +22,10 @@ public class ControladorEscenario3 {
                       lado = vista.textL.getText();
 
                       try{
-                        Double profundidad = modelo.calcularProfundidad(Double.parseDouble(radio),Double.parseDouble(lado));
+                    	double tol = Double.parseDouble(vista.textTol.getText());
+                        Double profundidad = modelo.calcularProfundidad(Double.parseDouble(radio),Double.parseDouble(lado),tol);
                         pd.redibujarPanelDibujo(profundidad,radio,lado);
+                        vista.resultX.setText("X= " + profundidad);
                       } catch(InvalidParameterException ex){
                         this.MuestraError("No es un valor valido para el volumen");
                       }catch(NumberFormatException e2) {
