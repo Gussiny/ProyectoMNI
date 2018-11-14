@@ -5,7 +5,7 @@ public class ProyectoMNI extends JFrame{
 	private JTabbedPane tabs;
 
 	public ProyectoMNI() {
-		this.setTitle("Proyecto MN Final Final");
+		this.setTitle("Proyecto MN Final Final El Bueno 13 de Noviembre 2018 Full Crack Última Versión Español 100% Real No Fake");
 		this.setSize(1080, 480);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
