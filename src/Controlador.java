@@ -5,14 +5,14 @@ import java.security.InvalidParameterException;
 import javax.swing.JOptionPane;
 
 public class Controlador {
-   
-	
+
+
         private Vista vista;
         private Modelo modelo;
         private PanelDibujo pd;
         public Double a= 0.,b=0.;
         public Controlador(Vista v, Modelo m, PanelDibujo pd2) {
-            
+
             this.vista = v;
             this.modelo = m;
             this.pd = pd2;
@@ -23,7 +23,7 @@ public class Controlador {
                 		a = Double.parseDouble(vista.textA.getText());
                         b = Double.parseDouble(vista.textB.getText());
                         Double tol = Double.parseDouble(vista.textTol.getText());
-                        
+
                         if(a<tol){
                             this.MuestraError("Valor de 'a' es MENOR a la TOLERANCIA");
                         }
@@ -38,13 +38,13 @@ public class Controlador {
                             this.MuestraError("No hay valores criticos reales");
                         }
                         if(x==null){
-                            this.MuestraError("No hay valores máximos para los valores de a y b dados");
+                            this.MuestraError("No hay valores mÃ¡ximos para los valores de a y b dados");
                         }
                         else if(x!=null){
                         	String xS =  String.valueOf(Math.round(x*10000.0)/10000.0);
                             vista.result.setText("X = " + xS + pd.valorMedida);
                             pd.redibujarPanelDibujo(a, b, xS);
-                           
+
                         }
                         else{
                             vista.result.setText("Indefinido");
@@ -52,12 +52,12 @@ public class Controlador {
                 	}
                 	catch(NumberFormatException exc) {
                 		this.MuestraError("Por favor ingrese el formato correcto");
-                	}                    
-                }                 
+                	}
+                }
                 public void MuestraError(String string){
                 	JOptionPane.showMessageDialog(null, string);
                     //vista.error.setText(string);
-                }           
+                }
             });
         }
 
