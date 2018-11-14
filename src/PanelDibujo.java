@@ -62,8 +62,10 @@ public class PanelDibujo extends JPanel implements ActionListener{
 	}
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawRect(extXi, extYi, extX, extY);	//	EXTERIOR DE LA CAJA
-		g.drawRect(intXi, intYi, intX, intY);	//	INTERIOR DE LA CAJA
+		g.setColor(Color.GRAY);
+		g.fillRect(extXi, extYi, extX, extY);	//	EXTERIOR DE LA CAJA
+		g.setColor(Color.DARK_GRAY);
+		g.fillRect(intXi, intYi, intX, intY);	//	INTERIOR DE LA CAJA
 		g.setColor(Color.BLACK);
 		
 		g.fillRect(esq1x, esq1y, 50, 50);	//	ESQUINA SUPERIOR IZQUIERDA
@@ -78,6 +80,8 @@ public class PanelDibujo extends JPanel implements ActionListener{
 		g.drawString("a = " + this.valorA + this.valorMedida, strAx, strAy);	//	VALOR DE a
 		g.drawString("b = " + this.valorB + this.valorMedida, strBx, strBy);	//	VALOR DE b
 		g.drawString("x = " + this.valorX + this.valorMedida, strXx, strXy);		//	VALOR DE x
+		
+		//	CAJA MOLDEADA
 		
 		g.drawRect(500, 250, 160, 40);
 		g.drawRect(600, 200, 160, 40);

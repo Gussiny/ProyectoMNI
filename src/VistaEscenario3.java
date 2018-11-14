@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class VistaEscenario3 extends JFrame{
+public class VistaEscenario3 extends JPanel{
 
 	public JLabel titulo = new JLabel();
 	public JLabel labelR = new JLabel(" Radio:  ");
@@ -31,12 +31,12 @@ public class VistaEscenario3 extends JFrame{
 	private PanelDibujoEscenario3 pd;
 
 	public VistaEscenario3(PanelDibujoEscenario3 pd2){
-		super("ESCENARIO 3");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//super("ESCENARIO 3");
+		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1080,480);
-		this.setLocationRelativeTo(null);
+		//this.setLocationRelativeTo(null);
 		this.setLayout(new BorderLayout(1,1));
-		this.setResizable(false);
+		//this.setResizable(false);
 		JPanel panelControl = new JPanel();
 
 		panelControl.setLayout(new BoxLayout(panelControl,BoxLayout.Y_AXIS));
@@ -57,6 +57,7 @@ public class VistaEscenario3 extends JFrame{
 		resultX.setFont(new Font("Arial",Font.BOLD, 26));
 		resultX.setText("X = ");
 
+		panelUnidades.add(new JLabel("Unidad de medición: "));
 		panelUnidades.add(unidadesMedicion);
 
 		panelR.add(labelR);
@@ -99,7 +100,7 @@ public class VistaEscenario3 extends JFrame{
 		panelControl.setBackground(Color.LIGHT_GRAY);
 		this.add(panelControl,BorderLayout.EAST);
 		this.setVisible(true);
-		this.pack();
+		//this.pack();
 	}
 
 	public void addCalcularListener(ActionListener actionListener) {

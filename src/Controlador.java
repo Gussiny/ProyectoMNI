@@ -38,7 +38,7 @@ public class Controlador {
                             this.MuestraError("No hay valores criticos reales");
                         }
                         if(x==null){
-                            this.MuestraError("No hay valores máximos para los valores de a y b dados");
+                            this.MuestraError("No hay valores maximos para los valores de a y b dados");
                         }
                         else if(x!=null){
                         	String xS =  String.valueOf(Math.round(x*10000.0)/10000.0);

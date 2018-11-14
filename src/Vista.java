@@ -1,10 +1,12 @@
 
 import javax.swing.*;
+import javax.swing.border.EtchedBorder;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Vista extends JFrame{
+public class Vista extends JPanel{
 
 	public JLabel titulo = new JLabel();
 	public JLabel labelA = new JLabel(" a:  ");
@@ -28,15 +30,17 @@ public class Vista extends JFrame{
 	public JLabel panelMedidaB = new JLabel(" m");
 	public JComboBox<String> unidadesMedicion = new JComboBox<String>();
 
+	
 	private PanelDibujo pd;
 
 	public Vista(PanelDibujo pd2){
-		super("CREADOR DE CAJAS");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//super("CREADOR DE CAJAS");
+		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1080,480);
-		this.setLocationRelativeTo(null);
+		//this.setLocationRelativeTo(null);
 		this.setLayout(new BorderLayout(1,1));
-		this.setResizable(false);
+		//this.setResizable(false);
+		
 		//JPanel panelDibujo = new JPanel();
 		//ImageIcon image = new ImageIcon("Box-Image.png");
 		//JLabel labelDibujo = new JLabel(image);
@@ -62,6 +66,7 @@ public class Vista extends JFrame{
 		result.setText("X = ");
 		//error.setText("No hay error");
 
+		panelUnidades.add(new JLabel("Unidad de medición: "));
 		panelUnidades.add(unidadesMedicion);
 
 		panelA.add(labelA);
@@ -76,6 +81,7 @@ public class Vista extends JFrame{
 		panelTol.add(textTol);
 		textTol.setText("0.001");
 
+		panelX.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED));
 		panelX.add(result);
 
 		panelBtCalcular.add(bCalcular);
@@ -104,7 +110,7 @@ public class Vista extends JFrame{
 		panelControl.setBackground(Color.LIGHT_GRAY);
 		this.add(panelControl,BorderLayout.EAST);
 		this.setVisible(true);
-		this.pack();
+		//this.pack();
 	}
 
 	public void addCalcularListener(ActionListener actionListener) {

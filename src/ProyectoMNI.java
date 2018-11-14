@@ -1,12 +1,45 @@
+import javax.swing.JFrame;
+import javax.swing.JTabbedPane;
 
-public class ProyectoMNI {
+public class ProyectoMNI extends JFrame{
+	private JTabbedPane pestañas;
 
+	public ProyectoMNI() {
+		this.setTitle("PROYECTO MDI");
+		this.setSize(1080, 480);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setResizable(false);
+							    
+	    //COMPONENTES ESCENARIO 1
+	    ModeloEscenario1 modE1 = new ModeloEscenario1();
+	    PanelDibujoEscenario1 pd1 = new PanelDibujoEscenario1(0.);
+	    VistaEscenario1 visE1 = new VistaEscenario1(pd1);
+	    new ControladorEscenario1(visE1,modE1,pd1);
+	    
+	    //COMPONENTES ESCENARIO 2
+	    Modelo modE2 = new Modelo();
+		PanelDibujo pd2 = new PanelDibujo(0., 0.);
+	    Vista visE2 = new Vista(pd2);
+	    new Controlador(visE2, modE2, pd2);
+	    
+	    //COMPONENTES ESCENARIO 3
+	    ModeloEscenario3 modE3 = new ModeloEscenario3();
+	    PanelDibujoEscenario3 pd3 = new PanelDibujoEscenario3(0.,0.);
+	    VistaEscenario3 visE3 = new VistaEscenario3(pd3);
+	    new ControladorEscenario3(visE3,modE3,pd3);
+	    
+	    pestañas = new JTabbedPane();
+	    pestañas.add("Escenario 1", visE1);
+	    pestañas.add("Escenario 2", visE2);
+	    pestañas.add("Escenario 3", visE3);
+	    this.add(pestañas);
+	    this.pack();
+	}
+	
 	public static void main(String[] args) {
-		Modelo modelo = new Modelo();
-		PanelDibujo pd = new PanelDibujo(0., 0.);
-	    Vista vista = new Vista(pd);
-	    new Controlador(vista, modelo, pd);
-	   
+		ProyectoMNI pm = new ProyectoMNI();
+		pm.setVisible(true);
 	}
 
 }
