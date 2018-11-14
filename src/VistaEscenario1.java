@@ -25,7 +25,7 @@ public class VistaEscenario1 extends JPanel{
 	public JLabel resultY = new JLabel();
 	public JLabel resultZ = new JLabel();
 	public JLabel error = new JLabel();
-	public JLabel panelMedidaA = new JLabel(" m");
+	public JLabel panelMedidaA = new JLabel(" m^3");
 	public JComboBox<String> unidadesMedicion = new JComboBox<String>();
 
 	private PanelDibujoEscenario1 pd;
@@ -122,7 +122,7 @@ public class VistaEscenario1 extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				panelMedidaA.setText(" " + unidadesMedicion.getSelectedItem().toString());
+				panelMedidaA.setText(" " + unidadesMedicion.getSelectedItem().toString()+"^3");
 				pd.valorMedida = " " + unidadesMedicion.getSelectedItem().toString();
 				pd.repaint();
 			}

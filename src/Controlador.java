@@ -55,7 +55,7 @@ public class Controlador {
                 	}
                 }
                 public void MuestraError(String string){
-                	JOptionPane.showMessageDialog(null, string);
+                	JOptionPane.showMessageDialog(null, string, "Error", JOptionPane.WARNING_MESSAGE);
                     //vista.error.setText(string);
                 }
             });

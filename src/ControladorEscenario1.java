@@ -25,22 +25,22 @@ public class ControladorEscenario1 {
 					Double tol = Double.parseDouble(vista.textTol.getText());
 					Double[] lados = modelo.calcularLados(Double.parseDouble(volumen), tol);
 					pd.redibujarPanelDibujo(lados[0], lados[1], lados[2], volumen);
-					vista.resultX.setText("X = " + lados[0]); 
-					vista.resultY.setText("Y = " + lados[1]); 
-					vista.resultZ.setText("Z = " + lados[2]); 
+					vista.resultX.setText("X = " + lados[0] + " " + vista.unidadesMedicion.getSelectedItem()); 
+					vista.resultY.setText("Y = " + lados[1] + " " + vista.unidadesMedicion.getSelectedItem()); 
+					vista.resultZ.setText("Z = " + lados[2] + " " + vista.unidadesMedicion.getSelectedItem()); 
 				} catch (InputMismatchException e2) {
 					this.MuestraError("Raíz falsa");
 				} catch (InvalidParameterException ex) {
-					this.MuestraError("No es un valor valido para el volumen");
+					this.MuestraError(volumen + " No es un valor valido para el volumen");
 				} catch (ArithmeticException e3) {
 					this.MuestraError("Indeterminación");
 				}catch (NumberFormatException e2) {
-					this.MuestraError("Por Favor Ingresa El Formato Correcto");
+					this.MuestraError("Por favor ingresa el formato correcto");
 				}
 			}
 
 			public void MuestraError(String string) {
-				JOptionPane.showMessageDialog(null, string);
+				JOptionPane.showMessageDialog(null, string, "Error", JOptionPane.WARNING_MESSAGE);
 			}
 
 		});

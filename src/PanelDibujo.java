@@ -24,10 +24,10 @@ public class PanelDibujo extends JPanel implements ActionListener{
 
 	public int lineaAxi = 50;
 	public int lineaAx = 450;
-	public int lineaAy = 330; // 330
+	public int lineaAy = 320; // 330
 
 	public int lineaByi = 100;
-	public int lineaBx = 460; // 480
+	public int lineaBx = 465; // 480
 	public int lineaBy = 300;
 
 	public int lineaXxi = 400;
@@ -63,9 +63,9 @@ public class PanelDibujo extends JPanel implements ActionListener{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.setColor(Color.GRAY);
-		g.fillRect(extXi, extYi, extX, extY);	//	EXTERIOR DE LA CAJA
+		g.drawRect(extXi, extYi, extX, extY);	//	EXTERIOR DE LA CAJA
 		g.setColor(Color.DARK_GRAY);
-		g.fillRect(intXi, intYi, intX, intY);	//	INTERIOR DE LA CAJA
+		g.drawRect(intXi, intYi, intX, intY);	//	INTERIOR DE LA CAJA
 		g.setColor(Color.BLACK);
 
 		g.fillRect(esq1x, esq1y, 50, 50);	//	ESQUINA SUPERIOR IZQUIERDA
@@ -82,27 +82,103 @@ public class PanelDibujo extends JPanel implements ActionListener{
 		g.drawString("x = " + this.valorX + this.valorMedida, strXx, strXy);		//	VALOR DE x
 
 		//	CAJA MOLDEADA
-
-		g.drawLine(770,200,770,240); // Linea que mide el lado x
-		g.drawString("x",775,225);
-
 		g.drawRect(500, 250, 160, 40); // Cara delantera
 		g.drawRect(600, 200, 160, 40); // Cara trasera
+		
 		g.drawLine(660, 250, 760, 200);
 		g.drawLine(660, 290, 760, 240);
 		g.drawLine(500, 250, 600, 200);
+		g.setColor(Color.LIGHT_GRAY);
 		g.drawLine(500, 290, 600, 240);
+		g.setColor(Color.BLACK);
+		
+		//	LINEAS DE MEDIDA CAJA MOLDEADA
+		
+		g.drawLine(770, 200, 770, 240); // Linea que mide el lado x
+		g.drawString("x",775,225);
+		g.drawLine(665, 300, 760, 250);	//	LINEA B 
+		g.drawLine(500, 300, 660, 300);	//	LINEA A
 
 		//this.repaint();
 	}
 
 
 	public void redibujarPanelDibujo(Double a, Double b, String xS) {
+		//rotarFigura(a, b);
+		
+		int difX = (int) Math.round(a) -(int) Double.parseDouble(this.valorA);
+		int difY = (int) Math.round(b) -(int) Double.parseDouble(this.valorB);
+		if(difX >= 50) {
+			difX = 25;
+		}else if(difX < -200) {
+			difX = -100;
+		}
+		if(difY >= 100) {
+			difY = 50;
+		}else if(difY < -50) {
+			difY = -25;
+		}
+		System.out.println(difX);
+		if(difX > 0) {
+			//System.out.println(this.valorA + " < " + a.toString() );
+			this.extX += difX;
+			this.intX += difX;
+			this.strBx += difX;
+			this.lineaBx += difX;
+			this.esq3x += difX;
+			this.esq4x += difX;
+			this.lineaAx += difX;
+			this.lineaXxi += difX;
+			this.lineaXx += difX;
+			this.strAx += difX;
+			this.strXx += difX;
+		}else if(difX < 0){
+			this.extX += difX;
+			this.intX += difX;
+			this.strBx += difX;
+			this.lineaBx += difX;
+			this.esq3x += difX;
+			this.esq4x += difX;
+			this.lineaAx += difX;
+			this.lineaXxi += difX;
+			this.lineaXx += difX;
+			this.strAx += difX;
+			this.strXx += difX;
+		}
+		
+		if(difY > 0) {
+			//System.out.println(this.valorA + " < " + a.toString() );
+			this.extY += difY;
+			this.intY += difY;
+			this.strBy += difY;
+			this.lineaBy += difY;
+			this.lineaXy += difY;
+			this.esq2y += difY;
+			this.esq4y += difY;
+			this.lineaAy += difY;
+			this.strAy += difY;
+			this.strXy = this.esq3y - 20;
+			this.lineaXy = this.esq3y - 10;
+		}else if(difY < 0){
+			this.extY += difY;
+			this.intY += difY;
+			this.strBy += difY;
+			this.lineaBy += difY;
+			this.lineaXy += difY;
+			this.esq2y += difY;
+			this.esq4y += difY;
+			this.lineaAy += difY;
+			this.strAy += difY;
+			this.strXy = this.esq3y - 20;
+			this.lineaXy = this.esq3y - 10;
+			
+		}
+		
 		this.valorA = a.toString();
 		this.valorB = b.toString();
 		this.valorX = xS;
-		rotarFigura(a, b);
 		repaint();
+		
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -127,14 +203,14 @@ public class PanelDibujo extends JPanel implements ActionListener{
 	        	this.esq3x = this.esq4x = 200;
 	        	this.lineaAxi = 50;
 	        	this.lineaAx = 250;
-	        	this.lineaAy = extY + 50; // 330
+	        	this.lineaAy = extY + 40; // 330
 
 	        	lineaByi = 25;
-	        	lineaBx = lineaAx +20; // 480
+	        	lineaBx = lineaAx + 20; // 480
 	        	lineaBy = lineaByi + 400;
 
 	        	lineaXxi = this.esq3x;
-	        	lineaXx = lineaXxi + 50;
+	        	lineaXx = lineaXxi + 40;
 	        	lineaXy = this.esq3y - 10;
 
 	        	this.strAx = 125;
@@ -163,7 +239,7 @@ public class PanelDibujo extends JPanel implements ActionListener{
 
 	        	lineaAxi = 50;
 	        	lineaAx = 450;
-	        	lineaAy = 330; // 330
+	        	lineaAy = 320; // 330
 
 	        	lineaByi = 100;
 	        	lineaBx = 460; // 480
