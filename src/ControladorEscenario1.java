@@ -20,7 +20,17 @@ public class ControladorEscenario1 {
                             @SuppressWarnings("unused")
             				public void actionPerformed(ActionEvent e) {
                       volumen = vista.textV.getText();
-                      pd.redibujarPanelDibujo(1.,1.,1.,volumen);
+
+                      try{
+                          Double[] lados = modelo.calcularLados(Double.parseDouble(volumen));
+                          pd.redibujarPanelDibujo(lados[0],lados[1],lados[2],volumen);
+                      } catch(InvalidParameterException ex){
+                        this.MuestraError("No es un valor valido para el volumen");
+                      }
+                    }
+
+                    public void MuestraError(String string){
+                    	JOptionPane.showMessageDialog(null, string);
                     }
 
         });

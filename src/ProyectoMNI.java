@@ -5,7 +5,7 @@ public class ProyectoMNI extends JFrame{
 	private JTabbedPane tabs;
 
 	public ProyectoMNI() {
-		this.setTitle("PROYECTO MDI");
+		this.setTitle("Proyecto MN Final Final");
 		this.setSize(1080, 480);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
