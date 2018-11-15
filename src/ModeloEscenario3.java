@@ -1,10 +1,15 @@
 import java.security.InvalidParameterException;
 
+import com.sun.xml.internal.txw2.IllegalAnnotationException;
+
 public class ModeloEscenario3 {
 
 	static public Double calcularProfundidad(Double radio, Double lado, double tol) throws InvalidParameterException {
 		if (radio <= 0 || lado <= 0) {
 			throw new InvalidParameterException();
+		}
+		if(radio>=lado) {
+			throw new IllegalAnnotationException("El radio debe ser menor al lado");
 		}
 		int i = 0;
 		double x0 = lado / 2.0;

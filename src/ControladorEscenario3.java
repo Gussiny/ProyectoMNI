@@ -1,8 +1,11 @@
 import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener;
+import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidParameterException;
 
 import javax.swing.JOptionPane;
+
+import com.sun.xml.internal.txw2.IllegalAnnotationException;
 
 public class ControladorEscenario3 {
 
@@ -31,6 +34,9 @@ public class ControladorEscenario3 {
                       }catch(NumberFormatException e2) {
                     	  this.MuestraError("Por Favor Ingresa El Formato Correcto");
                       }
+                      catch (IllegalAnnotationException e3) {
+						this.MuestraError("El radio debe ser menor al lado");
+					}
                     }
 
                     public void MuestraError(String string){
